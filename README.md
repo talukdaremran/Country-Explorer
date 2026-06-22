@@ -3,8 +3,12 @@
 ![Node.js](https://img.shields.io/badge/Node.js-18+-green)
 ![Express](https://img.shields.io/badge/Express.js-black)
 ![EJS](https://img.shields.io/badge/EJS-Template-orange)
-![License](https://img.shields.io/badge/License-MIT-blue)
+[![License](https://img.shields.io/badge/License-MIT-blue)](./LICENSE)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
+[![Live](https://img.shields.io/badge/Live-Demo-brightgreen)](https://country-explorer-wnpa.onrender.com)
+
+## 🔴 Live Demo
+👉 [https://country-explorer-wnpa.onrender.com](https://country-explorer-wnpa.onrender.com)
 
 A full-stack web application for exploring countries using the **REST Countries API (v5)**.
 
