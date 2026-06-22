@@ -95,7 +95,7 @@ To solve this, the app uses a **multi-layer caching strategy**:
 ![Home Page](./public/images/home.png)
 
 ### Live Search
-<video src="./public/images/liveSearch.mp4" controls></video>
+https://github.com/user-attachments/assets/11fb5981-da57-44ca-b737-36fb74d68e09
 
 ### Country Details
 ![Country Details](./public/images/details.png)
