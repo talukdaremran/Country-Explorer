@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= country.names.common %></title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script src="https://kit.fontawesome.com/35ce41c7eb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <div class="header">
+      <h1>Country Details</h1>
+    </div>
+  </header>
+  <main>
+    <div class="back-button-div">
+      <a href="/" class="back-button">
+        <i class="fa-solid fa-angle-left"></i> Back
+      </a>
+    </div>
+    <section class="main-container country-main-container">
+
+      <section class="details-flag-container">
+        <img 
+          src="<%= country.flag.url_svg || '/images/no-flag.png' %>" 
+          alt="<%= country.flag.description || 'No flag available' %>" 
+          class="details-flag"
+        />
+      </section>
+      <section class="country-info">
+
+        <h1 class="country-name"><%= country.names.common %></h1>
+        <p><strong>Official Name:</strong> <%= country.names.official %></p>
+
+        <p><strong>Capital:</strong> <%= country.capitals?.[0]?.name || "N/A" %></p>
+        <p><strong>Region:</strong> <%= country.region %></p>
+        <p><strong>Subregion:</strong> <%= country.subregion %></p>
+        <p><strong>Population:</strong> <%= country.population.toLocaleString() %></p>
+
+        <p><strong>Languages:</strong>
+          <%= (country.languages || []).map(l => l.name).join(", ") %>
+        </p>
+
+        <p><strong>Currency:</strong>
+          <%= Object.values(country.currencies || {})
+            .map(c => `${c.name} (${c.symbol || ""})`)
+            .join(", ") %>
+        </p>
+
+        <h2 class="neighbors-h2">Neighboring Countries</h2>
+        <div class="neighbors">
+            <% if (neighbors.length === 0) { %>
+                <p>No neighboring countries.</p>
+            <% } else { %>
+                <% neighbors.forEach(n => { %>
+                    <a class="neighbor" href="/country?name=<%= n.name %>">
+                        <img src="<%= n.flag %>" width="30">
+                        <%= n.name %>
+                    </a>
+                <% }) %>
+            <% } %>
+        </div>
+
+      </section>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Built with Node.js, Express & REST Countries API | © 2026 Emran Talukder</p>
+  </footer>
+</body>
+</html>
